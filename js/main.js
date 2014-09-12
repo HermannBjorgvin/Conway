@@ -21,8 +21,9 @@ var gameSettings = {
 // This is where i store my cellData
 var chunks = [
 	{
-		x: 0,
-		y: 0,
+		active:1,
+		x: 2,
+		y: 2,
 		cells:[
 			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
 			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
@@ -30,9 +31,9 @@ var chunks = [
 			[{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
 			[{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
 			[{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
+			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
+			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
+			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
 			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
 			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
 			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
@@ -58,9 +59,9 @@ var chunks = [
 			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
 			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
 			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
+			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
+			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
+			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 1, keep: 1},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
 			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
 			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
 			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
@@ -92,7 +93,8 @@ var chunks = [
 	}
 ];
 // Chunk constructor
-function newChunk(x, y){
+function newChunk(x, y, active){
+	this.active = active;
 	this.x = x;
 	this.y = y;
 	this.cells = [
@@ -164,267 +166,263 @@ function newChunk(x, y){
 }
 
 function nextGeneration(){
+	makeChunks();
+	activateChunks();
+
 	for (var i = chunks.length - 1; i >= 0; i--) {
-		var chunk = chunks[i];
-		var cells = chunks[i].cells;
+		
+		if (chunks[i].active == 1) {
 
-		// for all the cells in the chunk
-		for (var y = cells.length - 1; y >= 0; y--) {
-			for (var x = cells[y].length - 1; x >= 0; x--) {
-				var cell = cells[y][x];
-				var neighbors = 0;
+			var chunk = chunks[i];
+			var cells = chunks[i].cells;
 
-				// Top and Top Right neighbors
-				if (y != 0) {
-					//top block
-					if (chunk.cells[y-1][x].alive == 1) {
-						neighbors++;
-					};
+			// for all the cells in the chunk
+			for (var y = cells.length - 1; y >= 0; y--) {
+				for (var x = cells[y].length - 1; x >= 0; x--) {
+					var cell = cells[y][x];
+					var neighbors = 0;
 
-					// right block
-					if (x != gameSettings.chunkSize-1) {
-						if (chunk.cells[gameSettings.chunkSize-1][x+1].alive == 1) {
+					// Top and Top Right neighbors
+					if (y != 0) {
+						//top block
+						if (chunk.cells[y-1][x].alive == 1) {
 							neighbors++;
 						};
-					}
-					else if(x == gameSettings.chunkSize-1) {	
-						rightChunk = _.findWhere(chunks, {x: chunk.x+1, y: chunk.y});
-						if (rightChunk === undefined) {
-							var tmpNewChunk = new newChunk(chunk.x+1, chunk.y);
-							chunks.push(tmpNewChunk);
+
+						// right block
+						if (x != gameSettings.chunkSize-1) {
+							if (chunk.cells[y-1][x+1].alive == 1) {
+								neighbors++;
+							};
+						}
+						else if(x == gameSettings.chunkSize-1) {	
 							rightChunk = _.findWhere(chunks, {x: chunk.x+1, y: chunk.y});
+							if (rightChunk.cells[y-1][0].alive == 1) {
+								neighbors++;
+							};
 						};
-						
-						if (rightChunk.cells[gameSettings.chunkSize-1][0].alive == 1) {
-							neighbors++;
-						};
-					};
-				}
-				else if (y == 0) {
-					topChunk = _.findWhere(chunks, {x: chunk.x, y: chunk.y-1});
-					if (topChunk === undefined) {
-						var tmpNewChunk = new newChunk(chunk.x, chunk.y-1);
-						chunks.push(tmpNewChunk);
+					}
+					else if (y == 0) {
 						topChunk = _.findWhere(chunks, {x: chunk.x, y: chunk.y-1});
-					};
 
-					//top block
-					if (topChunk.cells[gameSettings.chunkSize-1][x].alive == 1) {
-						neighbors++;
-					};
-
-					//top right block
-					if (x != gameSettings.chunkSize-1) {
-						if (topChunk.cells[gameSettings.chunkSize-1][x+1].alive == 1) {
+						//top block
+						if (topChunk.cells[gameSettings.chunkSize-1][x].alive == 1) {
 							neighbors++;
 						};
-					}
-					else if(x == gameSettings.chunkSize-1) {	
-						topRightChunk = _.findWhere(chunks, {x: topChunk.x+1, y: topChunk.y});
-						if (topRightChunk === undefined) {
-							var tmpNewChunk = new newChunk(topChunk.x+1, topChunk.y);
-							chunks.push(tmpNewChunk);
+
+						//top right block
+						if (x != gameSettings.chunkSize-1) {
+							if (topChunk.cells[gameSettings.chunkSize-1][x+1].alive == 1) {
+								neighbors++;
+							};
+						}
+						else if(x == gameSettings.chunkSize-1) {	
 							topRightChunk = _.findWhere(chunks, {x: topChunk.x+1, y: topChunk.y});
-						};
 
-						if (topRightChunk.cells[gameSettings.chunkSize-1][0].alive == 1) {
-							neighbors++;
+							if (topRightChunk.cells[gameSettings.chunkSize-1][0].alive == 1) {
+								neighbors++;
+							};
 						};
 					};
-				};
-				// Right and Right Bottom neighbors
-				if (x != gameSettings.chunkSize-1 && neighbors < 4) {
-					// Right block
-					if (chunk.cells[y][x+1].alive == 1) {
-						neighbors++;
-					};
-
-					// Right Bottom block
-					if (y != gameSettings.chunkSize-1) {
-						if (chunk.cells[y+1][x+1].alive == 1) {
+					// Right and Right Bottom neighbors
+					if (x != gameSettings.chunkSize-1 && neighbors < 4) {
+						// Right block
+						if (chunk.cells[y][x+1].alive == 1) {
 							neighbors++;
 						};
-					}
-					else if(y == gameSettings.chunkSize-1) {	
-						rightBottomChunk = _.findWhere(chunks, {x: chunk.x, y: chunk.y+1});
-						if (rightBottomChunk === undefined) {
-							var tmpNewChunk = new newChunk(chunk.x, chunk.y+1);
-							chunks.push(tmpNewChunk);
+
+						// Right Bottom block
+						if (y != gameSettings.chunkSize-1) {
+							if (chunk.cells[y+1][x+1].alive == 1) {
+								neighbors++;
+							};
+						}
+						else if(y == gameSettings.chunkSize-1) {	
 							rightBottomChunk = _.findWhere(chunks, {x: chunk.x, y: chunk.y+1});
+							
+							if (rightBottomChunk.cells[0][x].alive == 1) {
+								neighbors++;
+							};
 						};
-						
-						if (rightBottomChunk.cells[0][x].alive == 1) {
-							neighbors++;
-						};
-					};
-				}
-				else if (x == gameSettings.chunkSize-1) {
-					rightChunk = _.findWhere(chunks, {x: chunk.x+1, y: chunk.y});
-					if (rightChunk === undefined) {
-						var tmpNewChunk = new newChunk(chunk.x+1, chunk.y);
-						chunks.push(tmpNewChunk);
+					}
+					else if (x == gameSettings.chunkSize-1) {
 						rightChunk = _.findWhere(chunks, {x: chunk.x+1, y: chunk.y});
-					};
 
-					//right block
-					if (rightChunk.cells[y][0].alive == 1) {
-						neighbors++;
-					};
-
-					//right bottom block
-					if (y != gameSettings.chunkSize-1) {
-						if (rightChunk.cells[y+1][0].alive == 1) {
+						//right block
+						if (rightChunk.cells[y][0].alive == 1) {
 							neighbors++;
 						};
-					}
-					else if(y == gameSettings.chunkSize-1) {	
-						rightBottomChunk = _.findWhere(chunks, {x: chunk.x+1, y: chunk.y+1});
-						if (rightBottomChunk === undefined) {
-							var tmpNewChunk = new newChunk(chunk.x+1, chunk.y+1);
-							chunks.push(tmpNewChunk);
+
+						//right bottom block
+						if (y != gameSettings.chunkSize-1) {
+							if (rightChunk.cells[y+1][0].alive == 1) {
+								neighbors++;
+							};
+						}
+						else if(y == gameSettings.chunkSize-1) {	
 							rightBottomChunk = _.findWhere(chunks, {x: chunk.x+1, y: chunk.y+1});
-						};
 
-						if (rightBottomChunk.cells[0][0].alive == 1) {
-							neighbors++;
+							if (rightBottomChunk.cells[0][0].alive == 1) {
+								neighbors++;
+							};
 						};
 					};
-				};
-				// Left and Left Top neighbors
-				if (x != 0 && neighbors < 4) {
-					// Left block
-					if (chunk.cells[y][x-1].alive == 1) {
-						neighbors++;
-					};
-
-					// Left top block
-					if (y != 0) {
-						if (chunk.cells[y-1][x-1].alive == 1) {
+					// Left and Left Top neighbors
+					if (x != 0 && neighbors < 4) {
+						// Left block
+						if (chunk.cells[y][x-1].alive == 1) {
 							neighbors++;
 						};
-					}
-					else if(y == 0) {	
-						leftTopChunk = _.findWhere(chunks, {x: chunk.x, y: chunk.y-1});
-						if (leftTopChunk === undefined) {
-							var tmpNewChunk = new newChunk(chunk.x, chunk.y-1);
-							chunks.push(tmpNewChunk);
+
+						// Left top block
+						if (y != 0) {
+							if (chunk.cells[y-1][x-1].alive == 1) {
+								neighbors++;
+							};
+						}
+						else if(y == 0) {	
 							leftTopChunk = _.findWhere(chunks, {x: chunk.x, y: chunk.y-1});
-						};
-						
-						if (leftTopChunk.cells[gameSettings.chunkSize-1][x].alive == 1) {
-							neighbors++;
-						};
-					};
-				}
-				else if (x == 0) {
-					leftChunk = _.findWhere(chunks, {x: chunk.x-1, y: chunk.y});
-					if (leftChunk === undefined) {
-						var tmpNewChunk = new newChunk(chunk.x-1, chunk.y);
-						chunks.push(tmpNewChunk);
-						leftChunk = _.findWhere(chunks, {x: chunk.x-1, y: chunk.y});
-					};
-
-					//left block
-					if (leftChunk.cells[y][gameSettings.chunkSize-1].alive == 1) {
-						neighbors++;
-					};
-
-					//left top block
-					if (y != 0) {
-						if (leftChunk.cells[y-1][gameSettings.chunkSize-1].alive == 1) {
-							neighbors++;
+							
+							if (leftTopChunk.cells[gameSettings.chunkSize-1][x].alive == 1) {
+								neighbors++;
+							};
 						};
 					}
-					else if(y == 0) {	
-						leftTopChunk = _.findWhere(chunks, {x: chunk.x-1, y: chunk.y-1});
-						if (leftTopChunk === undefined) {
-							var tmpNewChunk = new newChunk(chunk.x-1, chunk.y-1);
-							chunks.push(tmpNewChunk);
+					else if (x == 0) {
+						leftChunk = _.findWhere(chunks, {x: chunk.x-1, y: chunk.y});
+
+						//left block
+						if (leftChunk.cells[y][gameSettings.chunkSize-1].alive == 1) {
+							neighbors++;
+						};
+
+						//left top block
+						if (y != 0) {
+							if (leftChunk.cells[y-1][gameSettings.chunkSize-1].alive == 1) {
+								neighbors++;
+							};
+						}
+						else if(y == 0) {	
 							leftTopChunk = _.findWhere(chunks, {x: chunk.x-1, y: chunk.y-1});
-						};
 
-						if (leftTopChunk.cells[gameSettings.chunkSize-1][gameSettings.chunkSize-1].alive == 1) {
-							neighbors++;
+							if (leftTopChunk.cells[gameSettings.chunkSize-1][gameSettings.chunkSize-1].alive == 1) {
+								neighbors++;
+							};
 						};
 					};
-				};
-				// Bottom and Bottom Left neighbors
-				if (y != gameSettings.chunkSize-1 && neighbors < 4) {
-					//bottom block
-					if (chunk.cells[y+1][x].alive == 1) {
-						neighbors++;
-					};
-
-					// bottom Left block
-					if (x != 0) {
-						if (chunk.cells[y+1][x-1].alive == 1) {
+					// Bottom and Bottom Left neighbors
+					if (y != gameSettings.chunkSize-1 && neighbors < 4) {
+						//bottom block
+						if (chunk.cells[y+1][x].alive == 1) {
 							neighbors++;
 						};
-					}
-					else if(x == 0) {	
-						leftChunk = _.findWhere(chunks, {x: chunk.x-1, y: chunk.y});
-						if (leftChunk === undefined) {
-							var tmpNewChunk = new newChunk(chunk.x-1, chunk.y);
-							chunks.push(tmpNewChunk);
+
+						// bottom Left block
+						if (x != 0) {
+							if (chunk.cells[y+1][x-1].alive == 1) {
+								neighbors++;
+							};
+						}
+						else if(x == 0) {	
 							leftChunk = _.findWhere(chunks, {x: chunk.x-1, y: chunk.y});
-						};
-						
-						if (leftChunk.cells[y+1][gameSettings.chunkSize-1].alive == 1) {
-							neighbors++;
-						};
-					};
-				}
-				else if (y == gameSettings.chunkSize-1) {
-					bottomChunk = _.findWhere(chunks, {x: chunk.x, y: chunk.y+1});
-					if (bottomChunk === undefined) {
-						var tmpNewChunk = new newChunk(chunk.x, chunk.y+1);
-						chunks.push(tmpNewChunk);
-						bottomChunk = _.findWhere(chunks, {x: chunk.x, y: chunk.y+1});
-					};
-
-					//bottom block
-					if (bottomChunk.cells[0][x].alive == 1) {
-						neighbors++;
-					};
-
-					//bottom left block
-					if (x != 0) {
-						if (bottomChunk.cells[0][x-1].alive == 1) {
-							neighbors++;
+							
+							if (leftChunk.cells[y+1][gameSettings.chunkSize-1].alive == 1) {
+								neighbors++;
+							};
 						};
 					}
-					else if(x == 0) {	
-						bottomLeftChunk = _.findWhere(chunks, {x: bottomChunk.x-1, y: bottomChunk.y});
-						if (bottomLeftChunk === undefined) {
-							var tmpNewChunk = new newChunk(bottomChunk.x-1, bottomChunk.y);
-							chunks.push(tmpNewChunk);
-							bottomLeftChunk = _.findWhere(chunks, {x: bottomChunk.x-1, y: bottomChunk.y});
-						};
+					else if (y == gameSettings.chunkSize-1) {
+						bottomChunk = _.findWhere(chunks, {x: chunk.x, y: chunk.y+1});
 
-						if (bottomLeftChunk.cells[0][gameSettings.chunkSize-1].alive == 1) {
+						//bottom block
+						if (bottomChunk.cells[0][x].alive == 1) {
 							neighbors++;
 						};
-					};
-				};
 
-				// Decide if I kill or keep the cell
-				if (neighbors <= 1){
-					cell.keep = 0;
-				}
-				else if (cell.alive == 1 && neighbors <= 3){
-					cell.keep = 1;
-				}
-				else if(cell.alive == 0 && neighbors == 3){
-					cell.keep = 1;
-				}
-				else{
-					cell.keep = 0;
-				}
+						//bottom left block
+						if (x != 0) {
+							if (bottomChunk.cells[0][x-1].alive == 1) {
+								neighbors++;
+							};
+						}
+						else if(x == 0) {	
+							bottomLeftChunk = _.findWhere(chunks, {x: bottomChunk.x-1, y: bottomChunk.y});
+
+							if (bottomLeftChunk.cells[0][gameSettings.chunkSize-1].alive == 1) {
+								neighbors++;
+							};
+						};
+					};
+
+					// Decide if I kill or keep the cell
+					if (neighbors <= 1){
+						cell.keep = 0;
+					}
+					else if (cell.alive == 1 && neighbors <= 3){
+						cell.keep = 1;
+					}
+					else if(cell.alive == 0 && neighbors == 2){
+						cell.keep = 1;
+					}
+				};
 			};
 		};
 	};
 
 	kill();
+}
+
+//add chunks if need be
+// TODO: add thing to detect if any cells are bordering any chunks, if so make those chunks active
+function makeChunks(){
+
+	var activeChunks = _.where(chunks, {active: 1})
+	for (var i = 0; i < activeChunks.length; i++) {
+		var chunk = activeChunks[i];
+		
+		var operators = [[-1,-1],[-1,0],[-1,1],[0,-1],[0,0],[0,1],[1,-1],[1,0],[1,1]];
+
+		for (var i = 0; i < operators.length; i++) {
+			var x_delta = operators[i][0];
+			var y_delta = operators[i][1];
+
+			var borderingChunk = _.findWhere(chunks, {x: chunk.x + x_delta, y: chunk.y + y_delta})
+			if (borderingChunk === undefined) {
+				var tempNewChunk = new newChunk(chunk.x + x_delta, chunk.y + y_delta, 0);
+				chunks.push(tempNewChunk);
+			};
+		};
+	};
+
+}
+
+function activateChunks(){
+
+	for (var i = 0; i < chunks.length; i++) {
+		if(chunks[i].active == 1){
+			var activeChunk = chunks[i];
+			for (var y = 0; y < chunks[i].cells.length; y++) {
+				if (
+					(chunks[i].cells[y][0].alive == 1 || chunks[i].cells[y][gameSettings.chunkSize-1].alive == 1) ||
+					(chunks[i].cells[0][y].alive == 1 || chunks[i].cells[gameSettings.chunkSize-1][y].alive == 1)
+				) {
+					//console.log('live cell found');
+					$.each(chunks, function(){
+						if (
+							(this.x == activeChunk.x+1 && this.y == activeChunk.y) ||
+							(this.x == activeChunk.x-1 && this.y == activeChunk.y) ||
+							(this.y == activeChunk.y+1 && this.x == activeChunk.x) ||
+							(this.y == activeChunk.y-1 && this.x == activeChunk.x)
+						) {
+							console.log('activate');
+							this.active = 1;
+						};
+					});
+				};
+			};
+		}
+	};
+
 }
 
 // Kill cells marked keep == 0

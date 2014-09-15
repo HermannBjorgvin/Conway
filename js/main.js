@@ -2,7 +2,7 @@
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext('2d');
 
-setInterval(function(){gameTick();},100);
+setInterval(function(){gameTick();},10);
 
 function gameTick(){
 	drawChunks();
@@ -24,8 +24,8 @@ var chunks = [
 	{
 		active:1,
 		suspended:0,
-		x: 8,
-		y: 8,
+		x: 18,
+		y: 18,
 		cells:[
 			[{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
 			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
@@ -54,6 +54,7 @@ var chunks = [
 		]
 	}
 ];
+
 // Chunk constructor
 function newChunk(x, y, active, suspended){
 	this.active = active;
@@ -88,13 +89,17 @@ function newChunk(x, y, active, suspended){
 	]
 }
 
+// Calculator for the chunks and cells
 function nextGeneration(){
-	//deleteInactiveChunks();
-	activateChunksWithBorderingCells();
-	addBorderingChunksToActiveChunks();
 
+	// Deletes unused chunks
+	deleteEmptyChunks();
+
+	// Generates new chunks where needed
+	generateNewChunks();
+
+	// Qualify cells (Keep or Kill)
 	for (var i = chunks.length - 1; i >= 0; i--) {
-		
 		if (chunks[i].active == 1) {
 
 			var chunk = chunks[i];
@@ -124,7 +129,7 @@ function nextGeneration(){
 						else if(x == bounds) {	
 							var rightChunk = _.findWhere(chunks, {x: chunk.x+1, y: chunk.y});
 
-							if (rightChunk.cells[y-1][0].alive == 1) {
+							if (rightChunk != undefined && rightChunk.cells[y-1][0].alive == 1) {
 								neighbors++;
 							};
 						};
@@ -133,20 +138,20 @@ function nextGeneration(){
 						var topChunk = _.findWhere(chunks, {x: chunk.x, y: chunk.y-1});
 
 						//top block
-						if (topChunk.cells[bounds][x].alive == 1) {
+						if (topChunk != undefined && topChunk.cells[bounds][x].alive == 1) {
 							neighbors++;
 						};
 
 						//top right block
 						if (x != bounds) {
-							if (topChunk.cells[bounds][x+1].alive == 1) {
+							if (topChunk != undefined && topChunk.cells[bounds][x+1].alive == 1) {
 								neighbors++;
 							};
 						}
-						else if(x == bounds) {	
+						else if(topChunk != undefined && x == bounds) {	
 							var topRightChunk = _.findWhere(chunks, {x: topChunk.x+1, y: topChunk.y});
 
-							if (topRightChunk.cells[bounds][0].alive == 1) {
+							if (topRightChunk != undefined && topRightChunk.cells[bounds][0].alive == 1) {
 								neighbors++;
 							};
 						};
@@ -168,7 +173,7 @@ function nextGeneration(){
 						else if(x == 0 && neighbors <4) {	
 							var leftChunk = _.findWhere(chunks, {x: chunk.x-1, y: chunk.y});
 							
-							if (leftChunk.cells[y+1][bounds].alive == 1) {
+							if (leftChunk != undefined && leftChunk.cells[y+1][bounds].alive == 1) {
 								neighbors++;
 							};
 						};
@@ -177,20 +182,20 @@ function nextGeneration(){
 						var bottomChunk = _.findWhere(chunks, {x: chunk.x, y: chunk.y+1});
 
 						//bottom block
-						if (bottomChunk.cells[0][x].alive == 1) {
+						if (bottomChunk != undefined && bottomChunk.cells[0][x].alive == 1) {
 							neighbors++;
 						};
 
 						//bottom left block
 						if (x != 0) {
-							if (bottomChunk.cells[0][x-1].alive == 1) {
+							if (bottomChunk != undefined && bottomChunk.cells[0][x-1].alive == 1) {
 								neighbors++;
 							};
 						}
-						else if(x == 0 && neighbors <4) {	
+						else if(bottomChunk != undefined && x == 0 && neighbors <4) {	
 							var bottomLeftChunk = _.findWhere(chunks, {x: bottomChunk.x-1, y: bottomChunk.y});
 
-							if (bottomLeftChunk.cells[0][bounds].alive == 1) {
+							if (bottomLeftChunk != undefined && bottomLeftChunk.cells[0][bounds].alive == 1) {
 								neighbors++;
 							};
 						};
@@ -212,7 +217,7 @@ function nextGeneration(){
 						else if(y == 0 && neighbors <4) {	
 							var leftTopChunk = _.findWhere(chunks, {x: chunk.x, y: chunk.y-1});
 							
-							if (leftTopChunk.cells[bounds][x-1].alive == 1) {
+							if (leftTopChunk != undefined && leftTopChunk.cells[bounds][x-1].alive == 1) {
 								neighbors++;
 							};
 						};
@@ -221,20 +226,20 @@ function nextGeneration(){
 						var leftChunk = _.findWhere(chunks, {x: chunk.x-1, y: chunk.y});
 
 						//left block
-						if (leftChunk.cells[y][bounds].alive == 1) {
+						if (leftChunk != undefined && leftChunk.cells[y][bounds].alive == 1) {
 							neighbors++;
 						};
 
 						//left top block
 						if (y != 0) {
-							if (leftChunk.cells[y-1][bounds].alive == 1) {
+							if (leftChunk != undefined && leftChunk.cells[y-1][bounds].alive == 1) {
 								neighbors++;
 							};
 						}
 						else if(y == 0 && neighbors <4) {	
 							var leftTopChunk = _.findWhere(chunks, {x: chunk.x-1, y: chunk.y-1});
 
-							if (leftTopChunk.cells[bounds][bounds].alive == 1) {
+							if (leftTopChunk != undefined && leftTopChunk.cells[bounds][bounds].alive == 1) {
 								neighbors++;
 							};
 						};
@@ -256,7 +261,7 @@ function nextGeneration(){
 						else if(y == bounds && neighbors <4) {	
 							var rightBottomChunk = _.findWhere(chunks, {x: chunk.x, y: chunk.y+1});
 							
-							if (rightBottomChunk.cells[0][x+1].alive == 1) {
+							if (rightBottomChunk != undefined && rightBottomChunk.cells[0][x+1].alive == 1) {
 								neighbors++;
 							};
 						};
@@ -265,20 +270,20 @@ function nextGeneration(){
 						var rightChunk = _.findWhere(chunks, {x: chunk.x+1, y: chunk.y});
 
 						//right block
-						if (rightChunk.cells[y][0].alive == 1) {
+						if (rightChunk != undefined && rightChunk.cells[y][0].alive == 1) {
 							neighbors++;
 						};
 
 						//right bottom block
 						if (y != bounds) {
-							if (rightChunk.cells[y+1][0].alive == 1) {
+							if (rightChunk != undefined && rightChunk.cells[y+1][0].alive == 1) {
 								neighbors++;
 							};
 						}
 						else if(y == bounds && neighbors <4) {	
 							var rightBottomChunk = _.findWhere(chunks, {x: chunk.x+1, y: chunk.y+1});
 
-							if (rightBottomChunk.cells[0][0].alive == 1) {
+							if (rightBottomChunk != undefined && rightBottomChunk.cells[0][0].alive == 1) {
 								neighbors++;
 							};
 						};
@@ -299,35 +304,13 @@ function nextGeneration(){
 		};
 	};
 
+	// Kill all cells that didnt qualify
 	kill();
+
 }
 
-//add chunks if need be
-// TODO: add thing to detect if any cells are bordering any chunks, if so make those chunks active
-function addBorderingChunksToActiveChunks(){
-
-	var operators = [[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]];
-
-	for (var i = chunks.length - 1; i >= 0; i--) {
-		if (chunks[i].active == 1) {
-			var chunk = chunks[i];
-
-			for (var z = 0; z < operators.length; z++) {
-				var x_delta = operators[z][0];
-				var y_delta = operators[z][1];
-
-				var borderingChunk = _.findWhere(chunks, {x: chunk.x + x_delta, y: chunk.y + y_delta})
-				if (borderingChunk === undefined) {
-					var tempNewChunk = new newChunk(chunk.x + x_delta, chunk.y + y_delta, 0, 0);
-					chunks.push(tempNewChunk);
-				};
-			};	
-		};
-	};
-}
-
-//turn on the chunks that cells are about to enter into
-function activateChunksWithBorderingCells(){
+// Generate the chunks that cells are about to enter into
+function generateNewChunks(){
 	for (var i = chunks.length - 1; i >= 0; i--) {
 		var chunk = chunks[i];
 
@@ -365,16 +348,23 @@ function activateChunksWithBorderingCells(){
 	};
 }
 
+// Activate or Generate a new chunks
 function activateChunk(x_coords, y_coords){
+	var found = false;
 	for (var i = chunks.length - 1; i >= 0; i--) {
 		if (chunks[i].y == y_coords  && chunks[i].x == x_coords) {
 			chunks[i].active = 1;
-			chunks[i].suspended = 0;
+			found = true;
 		};
+	};
+	if (found === false) {
+		var tempNewChunk = new newChunk(x_coords, y_coords, 1, 0);
+		chunks.push(tempNewChunk);
 	};
 }
 
-function deleteInactiveChunks(){
+// Deletes empty chunks
+function deleteEmptyChunks(){
 	for (var i = chunks.length - 1; i >= 0; i--) {
 	
 		var c = chunks[i];
@@ -413,6 +403,7 @@ function kill(){
 	killReset();
 }
 
+// Reset the .Kill property of a cell
 function killReset(){
 	for (var i = chunks.length - 1; i >= 0; i--) {
 		for (var y = chunks[i].cells.length - 1; y >= 0; y--) {
@@ -442,6 +433,7 @@ function drawChunks(){
 	};
 }
 
+// Draw a specific chunks
 function drawChunk(chunk){
 
 	var zoom = gameSettings.zoom;

@@ -2,7 +2,7 @@
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext('2d');
 
-setInterval(function(){gameTick();},200);
+setInterval(function(){gameTick();},100);
 
 function gameTick(){
 	drawChunks();
@@ -13,7 +13,7 @@ function gameTick(){
 // Basic settings object that i can reference later
 var gameSettings = {
 	speed: 500,
-	zoom: 8,
+	zoom: 1,
 	cameraCenterX: 0,
 	cameraCenterY: 0,
 	chunkSize: 24
@@ -23,16 +23,17 @@ var gameSettings = {
 var chunks = [
 	{
 		active:1,
-		x: 0,
-		y: 0,
+		suspended:0,
+		x: 8,
+		y: 8,
 		cells:[
 			[{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
 			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
 			[{alive: 1, keep: 1},{alive: 1, keep: 1},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
 			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 1, keep: 1},{alive: 1, keep: 1}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 1, keep: 1},{alive: 1, keep: 1},{alive: 0, keep: 0}],
+			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 1, keep: 1},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
+			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 1, keep: 1},{alive: 1, keep: 1}],
+			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 1, keep: 1},{alive: 1, keep: 1},{alive: 0, keep: 0}],
 			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
 			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
 			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
@@ -54,8 +55,9 @@ var chunks = [
 	}
 ];
 // Chunk constructor
-function newChunk(x, y, active){
+function newChunk(x, y, active, suspended){
 	this.active = active;
+	this.suspended = suspended;
 	this.x = x;
 	this.y = y;
 	this.cells = [
@@ -87,9 +89,9 @@ function newChunk(x, y, active){
 }
 
 function nextGeneration(){
-	//deActivateChunks();
-	activateBorderingChunks();
-	generateBorderingChunks();
+	//deleteInactiveChunks();
+	activateChunksWithBorderingCells();
+	addBorderingChunksToActiveChunks();
 
 	for (var i = chunks.length - 1; i >= 0; i--) {
 		
@@ -302,9 +304,9 @@ function nextGeneration(){
 
 //add chunks if need be
 // TODO: add thing to detect if any cells are bordering any chunks, if so make those chunks active
-function generateBorderingChunks(){
+function addBorderingChunksToActiveChunks(){
 
-	var operators = [[-1,-1],[-1,0],[-1,1],[0,-1],[0,0],[0,1],[1,-1],[1,0],[1,1]];
+	var operators = [[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]];
 
 	for (var i = chunks.length - 1; i >= 0; i--) {
 		if (chunks[i].active == 1) {
@@ -316,7 +318,7 @@ function generateBorderingChunks(){
 
 				var borderingChunk = _.findWhere(chunks, {x: chunk.x + x_delta, y: chunk.y + y_delta})
 				if (borderingChunk === undefined) {
-					var tempNewChunk = new newChunk(chunk.x + x_delta, chunk.y + y_delta, 0);
+					var tempNewChunk = new newChunk(chunk.x + x_delta, chunk.y + y_delta, 0, 0);
 					chunks.push(tempNewChunk);
 				};
 			};	
@@ -325,60 +327,69 @@ function generateBorderingChunks(){
 }
 
 //turn on the chunks that cells are about to enter into
-function activateBorderingChunks(){
-	var activated = false;
-	while(activated == false){	
-		for (var i = chunks.length - 1; i >= 0; i--) {
-			var chunk = chunks[i];
-			for (var x = chunk.cells.length - 1; x >= 0; x--) {
-					
-				if (activated == false) {
-					if (//if chunk has cells that are touching its inner border
-						(chunk.cells[x][0].alive == 1 || chunk.cells[x][gameSettings.chunkSize-1] == 1) ||
-						(chunk.cells[0][x].alive == 1 || chunk.cells[gameSettings.chunkSize-1][x] == 1)
-					) {
-						activateChunks(chunk.x, chunk.y);
-						activated = true;
-					};
-				};
-			};
-		};
-		activated = true;
-	}
-}
-
-function activateChunks(x, y){
-	//console.log(x+" "+y);
+function activateChunksWithBorderingCells(){
 	for (var i = chunks.length - 1; i >= 0; i--) {
-		var c = chunks[i];
-		if (
-			(c.y == y-1 && (c.x >= x-1 && c.x <= x+1)) ||
-			(c.y == y && (c.x == x-1 || c.x == x+1)) ||
-			(c.y == y+1 && (c.x >= x-1 && c.x <= x+1))
-		) {
-			c.active = 1;
+		var chunk = chunks[i];
+
+		var leftChunkActive = false;
+		var rightChunkActive = false;
+		var topChunkActive = false;
+		var bottomChunkActive = false;
+
+		for (var z = chunk.cells.length - 1; z >= 0; z--) {	
+	
+			if (leftChunkActive != true && chunk.cells[z][0].alive == 1) 
+			{
+				leftChunkActive = true;
+				activateChunk(chunk.x-1, chunk.y);
+			};
+			
+			if (rightChunkActive != true && chunk.cells[z][gameSettings.chunkSize-1].alive == 1) 
+			{
+				rightChunkActive = true;
+				activateChunk(chunk.x+1, chunk.y);
+			};
+			
+			if (topChunkActive != true && chunk.cells[0][z].alive == 1) 
+			{
+				topChunkActive = true;
+				activateChunk(chunk.x, chunk.y-1);
+			};
+		
+			if (bottomChunkActive != true && chunk.cells[gameSettings.chunkSize-1][z].alive == 1) 
+			{
+				bottomChunkActive = true;
+				activateChunk(chunk.x, chunk.y+1);
+			};
 		};
 	};
 }
 
-function deActivateChunks(){
+function activateChunk(x_coords, y_coords){
 	for (var i = chunks.length - 1; i >= 0; i--) {
+		if (chunks[i].y == y_coords  && chunks[i].x == x_coords) {
+			chunks[i].active = 1;
+			chunks[i].suspended = 0;
+		};
+	};
+}
+
+function deleteInactiveChunks(){
+	for (var i = chunks.length - 1; i >= 0; i--) {
+	
+		var c = chunks[i];
+		var chunkEmpty = true;
 		
-		if (chunks[i].active != 0) {
-			var c = chunks[i];
-			var chunkEmpty = true;
-			
-			for (var y = c.cells.length - 1; y >= 0; y--) {
-				for (var x = c.cells[y].length - 1; x >= 0; x--) {
-					if (c.cells[y][x].alive == 1 || c.cells[y][x] == 1) {
-						chunkEmpty = false;
-					};
+		for (var y = c.cells.length - 1; y >= 0; y--) {
+			for (var x = c.cells[y].length - 1; x >= 0; x--) {
+				if (c.cells[y][x].alive == 1 || c.cells[y][x] == 1) {
+					chunkEmpty = false;
 				};
 			};
+		};
 
-			if (chunkEmpty == false) {
-				c.active = 0;
-			};
+		if (chunkEmpty == true) {
+			chunks.splice(i,1);
 		};
 	};
 }

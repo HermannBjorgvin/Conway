@@ -27,30 +27,94 @@ var chunks = [
 		x: 18,
 		y: 18,
 		cells:[
-			[{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 1, keep: 1},{alive: 1, keep: 1},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 1, keep: 1},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 1, keep: 1},{alive: 1, keep: 1}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 1, keep: 1},{alive: 1, keep: 1},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 1, keep: 1},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-			[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}]
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}]
+		]
+	},
+	{
+		active:1,
+		suspended:0,
+		x: 19,
+		y: 18,
+		cells:[
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}]
+		]
+	},
+	{
+		active:1,
+		suspended:0,
+		x: 18,
+		y: 25,
+		cells:[
+			[{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 1, k: 1},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 1, k: 1}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}]
 		]
 	}
 ];
@@ -62,30 +126,30 @@ function newChunk(x, y, active, suspended){
 	this.x = x;
 	this.y = y;
 	this.cells = [
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}],
-		[{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0},{alive: 0, keep: 0}]
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}]
 	]
 }
 
@@ -116,20 +180,20 @@ function nextGeneration(){
 					// Top and Top Right neighbors
 					if (y != 0) {
 						//top block
-						if (chunk.cells[y-1][x].alive == 1) {
+						if (chunk.cells[y-1][x].a == 1) {
 							neighbors++;
 						};
 
 						// right block
 						if (x != bounds) {
-							if (chunk.cells[y-1][x+1].alive == 1) {
+							if (chunk.cells[y-1][x+1].a == 1) {
 								neighbors++;
 							};
 						}
 						else if(x == bounds) {	
 							var rightChunk = _.findWhere(chunks, {x: chunk.x+1, y: chunk.y});
 
-							if (rightChunk != undefined && rightChunk.cells[y-1][0].alive == 1) {
+							if (rightChunk != undefined && rightChunk.cells[y-1][0].a == 1) {
 								neighbors++;
 							};
 						};
@@ -138,20 +202,20 @@ function nextGeneration(){
 						var topChunk = _.findWhere(chunks, {x: chunk.x, y: chunk.y-1});
 
 						//top block
-						if (topChunk != undefined && topChunk.cells[bounds][x].alive == 1) {
+						if (topChunk != undefined && topChunk.cells[bounds][x].a == 1) {
 							neighbors++;
 						};
 
 						//top right block
 						if (x != bounds) {
-							if (topChunk != undefined && topChunk.cells[bounds][x+1].alive == 1) {
+							if (topChunk != undefined && topChunk.cells[bounds][x+1].a == 1) {
 								neighbors++;
 							};
 						}
 						else if(topChunk != undefined && x == bounds) {	
 							var topRightChunk = _.findWhere(chunks, {x: topChunk.x+1, y: topChunk.y});
 
-							if (topRightChunk != undefined && topRightChunk.cells[bounds][0].alive == 1) {
+							if (topRightChunk != undefined && topRightChunk.cells[bounds][0].a == 1) {
 								neighbors++;
 							};
 						};
@@ -160,20 +224,20 @@ function nextGeneration(){
 					// Bottom and Bottom Left neighbors
 					if (y != bounds && neighbors <4) {
 						//bottom block
-						if (chunk.cells[y+1][x].alive == 1) {
+						if (chunk.cells[y+1][x].a == 1) {
 							neighbors++;
 						};
 
 						// bottom Left block
 						if (x != 0) {
-							if (chunk.cells[y+1][x-1].alive == 1) {
+							if (chunk.cells[y+1][x-1].a == 1) {
 								neighbors++;
 							};
 						}
 						else if(x == 0 && neighbors <4) {	
 							var leftChunk = _.findWhere(chunks, {x: chunk.x-1, y: chunk.y});
 							
-							if (leftChunk != undefined && leftChunk.cells[y+1][bounds].alive == 1) {
+							if (leftChunk != undefined && leftChunk.cells[y+1][bounds].a == 1) {
 								neighbors++;
 							};
 						};
@@ -182,20 +246,20 @@ function nextGeneration(){
 						var bottomChunk = _.findWhere(chunks, {x: chunk.x, y: chunk.y+1});
 
 						//bottom block
-						if (bottomChunk != undefined && bottomChunk.cells[0][x].alive == 1) {
+						if (bottomChunk != undefined && bottomChunk.cells[0][x].a == 1) {
 							neighbors++;
 						};
 
 						//bottom left block
 						if (x != 0) {
-							if (bottomChunk != undefined && bottomChunk.cells[0][x-1].alive == 1) {
+							if (bottomChunk != undefined && bottomChunk.cells[0][x-1].a == 1) {
 								neighbors++;
 							};
 						}
 						else if(bottomChunk != undefined && x == 0 && neighbors <4) {	
 							var bottomLeftChunk = _.findWhere(chunks, {x: bottomChunk.x-1, y: bottomChunk.y});
 
-							if (bottomLeftChunk != undefined && bottomLeftChunk.cells[0][bounds].alive == 1) {
+							if (bottomLeftChunk != undefined && bottomLeftChunk.cells[0][bounds].a == 1) {
 								neighbors++;
 							};
 						};
@@ -204,20 +268,20 @@ function nextGeneration(){
 					// Left and Left Top neighbors
 					if (x != 0 && neighbors <4) {
 						// Left block
-						if (chunk.cells[y][x-1].alive == 1) {
+						if (chunk.cells[y][x-1].a == 1) {
 							neighbors++;
 						};
 
 						// Left top block
 						if (y != 0) {
-							if (chunk.cells[y-1][x-1].alive == 1) {
+							if (chunk.cells[y-1][x-1].a == 1) {
 								neighbors++;
 							};
 						}
 						else if(y == 0 && neighbors <4) {	
 							var leftTopChunk = _.findWhere(chunks, {x: chunk.x, y: chunk.y-1});
 							
-							if (leftTopChunk != undefined && leftTopChunk.cells[bounds][x-1].alive == 1) {
+							if (leftTopChunk != undefined && leftTopChunk.cells[bounds][x-1].a == 1) {
 								neighbors++;
 							};
 						};
@@ -226,20 +290,20 @@ function nextGeneration(){
 						var leftChunk = _.findWhere(chunks, {x: chunk.x-1, y: chunk.y});
 
 						//left block
-						if (leftChunk != undefined && leftChunk.cells[y][bounds].alive == 1) {
+						if (leftChunk != undefined && leftChunk.cells[y][bounds].a == 1) {
 							neighbors++;
 						};
 
 						//left top block
 						if (y != 0) {
-							if (leftChunk != undefined && leftChunk.cells[y-1][bounds].alive == 1) {
+							if (leftChunk != undefined && leftChunk.cells[y-1][bounds].a == 1) {
 								neighbors++;
 							};
 						}
 						else if(y == 0 && neighbors <4) {	
 							var leftTopChunk = _.findWhere(chunks, {x: chunk.x-1, y: chunk.y-1});
 
-							if (leftTopChunk != undefined && leftTopChunk.cells[bounds][bounds].alive == 1) {
+							if (leftTopChunk != undefined && leftTopChunk.cells[bounds][bounds].a == 1) {
 								neighbors++;
 							};
 						};
@@ -248,20 +312,20 @@ function nextGeneration(){
 					// Right and Right Bottom neighbors
 					if (x != bounds && neighbors <4) {
 						// Right block
-						if (chunk.cells[y][x+1].alive == 1) {
+						if (chunk.cells[y][x+1].a == 1) {
 							neighbors++;
 						};
 
 						// Right Bottom block
 						if (y != bounds) {
-							if (chunk.cells[y+1][x+1].alive == 1) {
+							if (chunk.cells[y+1][x+1].a == 1) {
 								neighbors++;
 							};
 						}
 						else if(y == bounds && neighbors <4) {	
 							var rightBottomChunk = _.findWhere(chunks, {x: chunk.x, y: chunk.y+1});
 							
-							if (rightBottomChunk != undefined && rightBottomChunk.cells[0][x+1].alive == 1) {
+							if (rightBottomChunk != undefined && rightBottomChunk.cells[0][x+1].a == 1) {
 								neighbors++;
 							};
 						};
@@ -270,20 +334,20 @@ function nextGeneration(){
 						var rightChunk = _.findWhere(chunks, {x: chunk.x+1, y: chunk.y});
 
 						//right block
-						if (rightChunk != undefined && rightChunk.cells[y][0].alive == 1) {
+						if (rightChunk != undefined && rightChunk.cells[y][0].a == 1) {
 							neighbors++;
 						};
 
 						//right bottom block
 						if (y != bounds) {
-							if (rightChunk != undefined && rightChunk.cells[y+1][0].alive == 1) {
+							if (rightChunk != undefined && rightChunk.cells[y+1][0].a == 1) {
 								neighbors++;
 							};
 						}
 						else if(y == bounds && neighbors <4) {	
 							var rightBottomChunk = _.findWhere(chunks, {x: chunk.x+1, y: chunk.y+1});
 
-							if (rightBottomChunk != undefined && rightBottomChunk.cells[0][0].alive == 1) {
+							if (rightBottomChunk != undefined && rightBottomChunk.cells[0][0].a == 1) {
 								neighbors++;
 							};
 						};
@@ -291,13 +355,13 @@ function nextGeneration(){
 
 					// Decide if I kill or keep the cell
 					if (neighbors <= 1 || neighbors >= 4){
-						cell.keep = 0;
+						cell.k = 0;
 					}
-					else if (cell.alive == 1 && neighbors <= 3){
-						cell.keep = 1;
+					else if (cell.a == 1 && neighbors <= 3){
+						cell.k = 1;
 					}
-					else if(cell.alive == 0 && neighbors == 3){
-						cell.keep = 1;
+					else if(cell.a == 0 && neighbors == 3){
+						cell.k = 1;
 					}
 				};
 			};
@@ -321,25 +385,25 @@ function generateNewChunks(){
 
 		for (var z = chunk.cells.length - 1; z >= 0; z--) {	
 	
-			if (leftChunkActive != true && chunk.cells[z][0].alive == 1) 
+			if (leftChunkActive != true && chunk.cells[z][0].a == 1) 
 			{
 				leftChunkActive = true;
 				activateChunk(chunk.x-1, chunk.y);
 			};
 			
-			if (rightChunkActive != true && chunk.cells[z][gameSettings.chunkSize-1].alive == 1) 
+			if (rightChunkActive != true && chunk.cells[z][gameSettings.chunkSize-1].a == 1) 
 			{
 				rightChunkActive = true;
 				activateChunk(chunk.x+1, chunk.y);
 			};
 			
-			if (topChunkActive != true && chunk.cells[0][z].alive == 1) 
+			if (topChunkActive != true && chunk.cells[0][z].a == 1) 
 			{
 				topChunkActive = true;
 				activateChunk(chunk.x, chunk.y-1);
 			};
 		
-			if (bottomChunkActive != true && chunk.cells[gameSettings.chunkSize-1][z].alive == 1) 
+			if (bottomChunkActive != true && chunk.cells[gameSettings.chunkSize-1][z].a == 1) 
 			{
 				bottomChunkActive = true;
 				activateChunk(chunk.x, chunk.y+1);
@@ -372,7 +436,7 @@ function deleteEmptyChunks(){
 		
 		for (var y = c.cells.length - 1; y >= 0; y--) {
 			for (var x = c.cells[y].length - 1; x >= 0; x--) {
-				if (c.cells[y][x].alive == 1 || c.cells[y][x] == 1) {
+				if (c.cells[y][x].a == 1 || c.cells[y][x] == 1) {
 					chunkEmpty = false;
 				};
 			};
@@ -384,17 +448,17 @@ function deleteEmptyChunks(){
 	};
 }
 
-// Kill cells marked keep == 0
+// Kill cells marked k == 0
 function kill(){
 	for (var i = chunks.length - 1; i >= 0; i--) {
 		for (var y = chunks[i].cells.length - 1; y >= 0; y--) {
 			for (var z = chunks[i].cells[y].length - 1; z >= 0; z--) {
 				cell = chunks[i].cells[y][z];
-				if (cell.keep == 0){
-					cell.alive = 0;
+				if (cell.k == 0){
+					cell.a = 0;
 				}
-				else if(cell.keep == 1){
-					cell.alive = 1;
+				else if(cell.k == 1){
+					cell.a = 1;
 				}
 			};
 		};
@@ -409,8 +473,8 @@ function killReset(){
 		for (var y = chunks[i].cells.length - 1; y >= 0; y--) {
 			for (var z = chunks[i].cells[y].length - 1; z >= 0; z--) {
 				cell = chunks[i].cells[y][z];
-				if (cell.keep == 1){
-					cell.keep = 0;
+				if (cell.k == 1){
+					cell.k = 0;
 				};
 			};
 		};
@@ -450,7 +514,7 @@ function drawChunk(chunk){
 		for (var x = chunk.cells[y].length - 1; x >= 0; x--) {
 			var cell = chunk.cells[y][x];
 
-			if (cell.alive == 1){
+			if (cell.a == 1){
 				var xCoords = (chunk.x * gameSettings.chunkSize + x) * zoom;
 				var yCoords = (chunk.y * gameSettings.chunkSize + y) * zoom;
 

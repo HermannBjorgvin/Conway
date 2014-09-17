@@ -1,22 +1,36 @@
-
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext('2d');
 
-setInterval(function(){gameTick();},10);
-
 function gameTick(){
-	drawChunks();
-
-	nextGeneration();
+	if (game.paused != true) {
+		drawChunks();
+		nextGeneration();
+	};
 }
 
 // Basic settings object that i can reference later
-var gameSettings = {
-	speed: 500,
-	zoom: 1,
-	cameraCenterX: 0,
-	cameraCenterY: 0,
-	chunkSize: 24
+var game = {
+	speed: 50,
+	paused: false,
+	zoom: 2,
+	chunkSize: 24,
+	mapSizeTop: 0,
+	mapSizeBottom: 7,
+	mapSizeLeft: 0,
+	mapSizeRight: 20
+}
+
+// This is the camera object
+var camera = {
+	offsetX:0, // offsets in pixels that change with zoom 
+	offsetY:0,
+	drag:0.6 // acts sort of like friction, 0 being frictionless and 1 being point blank accuratcy
+}
+
+// This is the paintbrush
+var paintbrush = {
+	size: 1,
+	spread: 0,
 }
 
 // This is where i store my cellData
@@ -24,8 +38,8 @@ var chunks = [
 	{
 		active:1,
 		suspended:0,
-		x: 18,
-		y: 18,
+		x: 2,
+		y: 2,
 		cells:[
 			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
 			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
@@ -56,8 +70,8 @@ var chunks = [
 	{
 		active:1,
 		suspended:0,
-		x: 19,
-		y: 18,
+		x: 3,
+		y: 2,
 		cells:[
 			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
 			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
@@ -88,8 +102,8 @@ var chunks = [
 	{
 		active:1,
 		suspended:0,
-		x: 18,
-		y: 25,
+		x: 3,
+		y: 6,
 		cells:[
 			[{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
 			[{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
@@ -118,6 +132,9 @@ var chunks = [
 		]
 	}
 ];
+
+// Main interval function
+setInterval(function(){gameTick();},game.speed);
 
 // Chunk constructor
 function newChunk(x, y, active, suspended){
@@ -175,7 +192,7 @@ function nextGeneration(){
 
 					var cell = cells[y][x];
 					var neighbors = 0;
-					var bounds = gameSettings.chunkSize-1;
+					var bounds = game.chunkSize-1;
 
 					// Top and Top Right neighbors
 					if (y != 0) {
@@ -391,7 +408,7 @@ function generateNewChunks(){
 				activateChunk(chunk.x-1, chunk.y);
 			};
 			
-			if (rightChunkActive != true && chunk.cells[z][gameSettings.chunkSize-1].a == 1) 
+			if (rightChunkActive != true && chunk.cells[z][game.chunkSize-1].a == 1) 
 			{
 				rightChunkActive = true;
 				activateChunk(chunk.x+1, chunk.y);
@@ -403,7 +420,7 @@ function generateNewChunks(){
 				activateChunk(chunk.x, chunk.y-1);
 			};
 		
-			if (bottomChunkActive != true && chunk.cells[gameSettings.chunkSize-1][z].a == 1) 
+			if (bottomChunkActive != true && chunk.cells[game.chunkSize-1][z].a == 1) 
 			{
 				bottomChunkActive = true;
 				activateChunk(chunk.x, chunk.y+1);
@@ -440,6 +457,13 @@ function deleteEmptyChunks(){
 					chunkEmpty = false;
 				};
 			};
+		};
+
+		if (
+			!(c.x >= -game.mapSizeLeft && c.x <= game.mapSizeRight) ||
+			!(c.y >= -game.mapSizeTop && c.y <= game.mapSizeBottom)
+		) {
+			chunks.splice(i,1);
 		};
 
 		if (chunkEmpty == true) {
@@ -485,12 +509,8 @@ function killReset(){
 function drawChunks(){
 	clearCanvas();
 
-	// Test
-	ctx.fillStyle = '#000';
-	ctx.fillRect(0, 0, gameSettings.zoom, gameSettings.zoom);
-	ctx.fillRect(396, 0, gameSettings.zoom, gameSettings.zoom);
-	ctx.fillRect(0, 396, gameSettings.zoom, gameSettings.zoom);
-	ctx.fillRect(396, 396, gameSettings.zoom, gameSettings.zoom);
+	ctx.fillStyle = '#B6E2E7';
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 	for (var i = chunks.length - 1; i >= 0; i--) {
 		drawChunk(chunks[i]);
@@ -500,12 +520,12 @@ function drawChunks(){
 // Draw a specific chunks
 function drawChunk(chunk){
 
-	var zoom = gameSettings.zoom;
+	var zoom = game.zoom;
 
 	ctx.fillStyle = '#4BC379';
 
 	// Draw chunk background
-	ctx.fillRect(chunk.x * zoom * gameSettings.chunkSize, chunk.y * zoom * gameSettings.chunkSize, zoom * gameSettings.chunkSize, zoom * gameSettings.chunkSize);
+	ctx.fillRect(chunk.x * zoom * game.chunkSize + camera.offsetX, chunk.y * zoom * game.chunkSize + camera.offsetY, zoom * game.chunkSize, zoom * game.chunkSize);
 
 	// Draw cells
 	for (var y = chunk.cells.length - 1; y >= 0; y--) {
@@ -515,11 +535,11 @@ function drawChunk(chunk){
 			var cell = chunk.cells[y][x];
 
 			if (cell.a == 1){
-				var xCoords = (chunk.x * gameSettings.chunkSize + x) * zoom;
-				var yCoords = (chunk.y * gameSettings.chunkSize + y) * zoom;
+				var xCoords = (chunk.x * game.chunkSize + x) * zoom;
+				var yCoords = (chunk.y * game.chunkSize + y) * zoom;
 
 				ctx.fillStyle = '#000';
-				ctx.fillRect(xCoords, yCoords, zoom, zoom);
+				ctx.fillRect(xCoords + camera.offsetX, yCoords + camera.offsetY, zoom, zoom);
 			};
 		};
 	};

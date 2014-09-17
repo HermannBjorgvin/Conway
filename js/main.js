@@ -24,8 +24,36 @@ var game = {
 var camera = {
 	offsetX:0, // offsets in pixels that change with zoom 
 	offsetY:0,
-	drag:0.6 // acts sort of like friction, 0 being frictionless and 1 being point blank accuratcy
+	oldOffsetX:0,
+	oldOffsetY:0,
+	lockCamera:true,
+	mouseStartPosX:0,
+	mouseStartPosY:0,
+	mouseDown: function(e){ // on mousedown lock down coordinates and mouse start position
+		camera.lockCamera = false;
+		camera.oldOffsetX = camera.offsetX;
+		camera.oldOffsetY = camera.offsetY;
+		camera.mouseStartPosX = e.x;
+		camera.mouseStartPosY = e.y;
+		console.log("mouseDown X:"+e.x+" Y:"+e.y);
+	},
+	mouseUp: function(){
+		camera.lockCamera = true;
+		console.log("mouseUp");
+	},
+	mouseMove: function(e){
+		if (camera.lockCamera != true) {
+			//camera.offsetX = camera.oldOffsetX + (0 - camera.mouseStartPosX);
+			camera.offsetY = camera.oldOffsetY + (e.y - camera.mouseStartPosY);
+			//console.log(" X:"+ String(camera.offsetX));
+			console.log(" Y:"+ String(camera.offsetY));
+		};
+	}
 }
+
+canvas.addEventListener("mousedown", camera.mouseDown, false);
+canvas.addEventListener("mouseup", camera.mouseUp, false);
+canvas.addEventListener("mousemove", camera.mouseMove, false);
 
 // This is the paintbrush
 var paintbrush = {

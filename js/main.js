@@ -10,14 +10,14 @@ function gameTick(){
 
 // Basic settings object that i can reference later
 var game = {
-	speed: 50,
+	speed: 50, 
 	paused: false,
 	zoom: 2,
 	chunkSize: 24,
 	mapSizeTop: 0,
 	mapSizeBottom: 7,
 	mapSizeLeft: 0,
-	mapSizeRight: 20
+	mapSizeRight: 5
 }
 
 // This is the camera object
@@ -30,36 +30,71 @@ var camera = {
 	mouseStartPosX:0,
 	mouseStartPosY:0,
 	mouseDown: function(e){ // on mousedown lock down coordinates and mouse start position
-		camera.lockCamera = false;
-		camera.oldOffsetX = camera.offsetX;
-		camera.oldOffsetY = camera.offsetY;
-		camera.mouseStartPosX = e.x;
-		camera.mouseStartPosY = e.y;
-		console.log("mouseDown X:"+e.x+" Y:"+e.y);
+	    if (e.button === 2) {
+	    	console.log("Right mouse down on x:"+e.screenX+" y:"+e.screenY);
+		    this.lockCamera = false;
+		    this.oldOffsetX = this.offsetX;
+		    this.oldOffsetY = this.offsetY;
+		    this.mouseStartPosX = e.screenX;
+		    this.mouseStartPosY = e.screenY;    	
+	    };
 	},
-	mouseUp: function(){
-		camera.lockCamera = true;
-		console.log("mouseUp");
+	mouseUp: function(e){ // on mouseup lock the camera (so that the mousemove event isnt just all over the place)
+	    if (e.button === 2) {
+	    	//console.log("Right Mouse up");
+	    	this.lockCamera = true;
+	    }
 	},
 	mouseMove: function(e){
-		if (camera.lockCamera != true) {
-			//camera.offsetX = camera.oldOffsetX + (0 - camera.mouseStartPosX);
-			camera.offsetY = camera.oldOffsetY + (e.y - camera.mouseStartPosY);
-			//console.log(" X:"+ String(camera.offsetX));
-			console.log(" Y:"+ String(camera.offsetY));
+		if (this.lockCamera != true) {
+	   		//console.log("Mouse move");
+		    this.offsetX = this.oldOffsetX + (e.screenX - this.mouseStartPosX);
+		    this.offsetY = this.oldOffsetY + (e.screenY - this.mouseStartPosY);
 		};
 	}
 }
 
-canvas.addEventListener("mousedown", camera.mouseDown, false);
-canvas.addEventListener("mouseup", camera.mouseUp, false);
-canvas.addEventListener("mousemove", camera.mouseMove, false);
+// Mouse event listeners for camera 
+canvas.addEventListener("mousedown", camera.mouseDown.bind(camera), false);
+canvas.addEventListener("mouseup", camera.mouseUp.bind(camera), false);
+canvas.addEventListener("mousemove", camera.mouseMove.bind(camera), false);
 
 // This is the paintbrush
 var paintbrush = {
 	size: 1,
 	spread: 0,
+	lock: true,
+	paint: function(e){
+		var pos = this.getMousePos(canvas, e);
+		var chunk = {x:0, y:0};
+		var cell = {x:0, y:0};
+
+		chunk.x = Math.floor(pos.x/(game.chunkSize * game.zoom));
+		chunk.y = Math.floor(pos.y/(game.chunkSize * game.zoom));
+
+		cell.x = Math.floor((pos.x%(game.chunkSize * game.zoom))/game.zoom);
+		cell.y = Math.floor((pos.y%(game.chunkSize * game.zoom))/game.zoom);
+
+		console.log("Chunk x:"+chunk.x+" y:"+chunk.y);
+		console.log("Cell  x:"+cell.x+" y:"+cell.y);
+
+		for (var i = 0; i < chunks.length; i++) {
+			if (chunks[i].x == chunk.x && chunks.y == chunk.y) {
+				chunks[i].cells[cell.y][cell.x].k = 1;
+			};
+		};
+	},
+	getMousePos: function(canvas, evt) {
+	    var rect = canvas.getBoundingClientRect();
+	    return {
+	    	x: Math.round(evt.clientX - rect.left),
+	    	y: Math.round(evt.clientY - rect.top)
+	    };
+	}
 }
+
+// Mouse event listeners for paintbrush
+canvas.addEventListener("mousedown", paintbrush.paint.bind(paintbrush), false);
 
 // This is where i store my cellData
 var chunks = [

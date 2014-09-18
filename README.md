@@ -1,4 +1,4 @@
-<h1>conway</h1>
+<h1>Conway JS</h1>
 
 A javascript powered Conways game of life
 

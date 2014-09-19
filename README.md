@@ -5,6 +5,7 @@ A javascript powered Conways game of life
 <h3>Goals:</h3>
 <ul>
   <li>Infinite map pieced down into chunks (as much as your CPU allows)</li>
+  <li>Each iteration must take less than 50ms on small maps and 100ms on large maps</li>
   <li>Limit map size option for speed boost</li>
   <li>MS PAINT style editing interface</li>
   <li>GUI features such as zoom in/out, drag</li>

@@ -3,118 +3,26 @@ canvas.setAttribute("tabindex", 0);
 var ctx = canvas.getContext('2d');
 
 // This is where i store my cellData
+// A stands for alive, is the cell currently alive?
+// K stands for keep, do i want to keep the cell next round?
 var chunks = [
-	{
-		active:1,
-		suspended:0,
-		x: 2,
-		y: 2,
-		cells:[
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}]
-		]
-	},
-	{
-		active:1,
-		suspended:0,
-		x: 3,
-		y: 2,
-		cells:[
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}]
-		]
-	},
-	{
-		active:1,
-		suspended:0,
-		x: 3,
-		y: 6,
-		cells:[
-			[{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 1, k: 1},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 1, k: 1}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 1, k: 1},{a: 1, k: 1},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 1, k: 1},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-			[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}]
-		]
-	}
+	
 ];
 
 // Basic settings object that i can reference later
 var game = {
-	speed: 10, 
-	paused: false,
+	speed: 50, 
+	paused: true,
 	zoom: 2,
-	chunkSize: 24,
-	mapSizeTop: 0,
-	mapSizeBottom: 7,
-	mapSizeLeft: 0,
-	mapSizeRight: 5,
+	chunkSize: 4, // 24 seems to work best
+	mapSizeTop: 100,
+	mapSizeBottom: 100,
+	mapSizeLeft: 100,
+	mapSizeRight: 100,
+	currentFPS: [0,0,0,0,0,0,0,0,0,0],
 	pause: function(e){
 		if (e.key == "p") {
-			console.log("p");
+			//console.log("p");
 			this.paused = !this.paused;
 		};
 	},
@@ -125,18 +33,35 @@ var game = {
 		};
 	},
 	tick: function(){
+		var start = new Date().getTime();
+
 		if (game.paused != true) {
 			nextGeneration();
 		}
-		drawChunks();
+		draw();
+	
+		var end = new Date().getTime();
+		var time = end - start;
+
+		if (game.paused != true) {
+			this.currentFPS.push(Math.round(1000/time));
+			this.currentFPS.splice(0, 1);
+		};
 	},
 	forceTick: function(){
-		drawChunks();
 		nextGeneration();
+		draw();
+	},
+	getMousePos: function(canvas, evt) {
+	    var rect = canvas.getBoundingClientRect();
+	    return {
+	    	x: Math.round(evt.clientX - rect.left),
+	    	y: Math.round(evt.clientY - rect.top)
+	    };
 	}
 }
 
-
+// Game event listeners
 canvas.addEventListener("keydown", game.pause.bind(game), false);
 canvas.addEventListener("keydown", game.nextFrame.bind(game), false);
 
@@ -151,7 +76,7 @@ var camera = {
 	mouseStartPosY:0,
 	mouseDown: function(e){ // on mousedown lock down coordinates and mouse start position
 	    if (e.button === 2) {
-	    	console.log("Right mouse down on x:"+e.screenX+" y:"+e.screenY);
+	    	//console.log("Right mouse down on x:"+e.screenX+" y:"+e.screenY);
 		    this.lockCamera = false;
 		    this.oldOffsetX = this.offsetX;
 		    this.oldOffsetY = this.offsetY;
@@ -171,86 +96,156 @@ var camera = {
 		    this.offsetX = this.oldOffsetX + (e.screenX - this.mouseStartPosX);
 		    this.offsetY = this.oldOffsetY + (e.screenY - this.mouseStartPosY);
 		};
-	}
+	},
+	mouseWheel: function(e){
+	 	e.preventDefault();
+		//console.log(e.deltaY);
+		
+		var pos = game.getMousePos(canvas, e);
+		var zoomDelta = Math.abs(Math.ceil(e.deltaY/3));
+
+		//console.log("X "+pos.x);
+		//console.log("Y "+pos.y);
+
+		if (e.deltaY < 0) {
+			// Change the zoom
+			game.zoom += zoomDelta;
+		}
+		else if(e.deltaY > 0){
+			// Change the zoom
+			game.zoom = Math.max(game.zoom - zoomDelta, 1);
+		}
+		else{};
+
+		// Change the camera offset to match the zoom
+		this.offsetX = (this.offsetX / game.zoom) * game.zoom;
+		this.offsetY = (this.offsetY / game.zoom) * game.zoom;
+
+	}	
 }
 
-// Mouse event listeners for camera 
+// Event listeners for camera 
 canvas.addEventListener("mousedown", camera.mouseDown.bind(camera), false);
 canvas.addEventListener("mouseup", camera.mouseUp.bind(camera), false);
 canvas.addEventListener("mousemove", camera.mouseMove.bind(camera), false);
+canvas.addEventListener("wheel", camera.mouseWheel.bind(camera), false);
 
 // This is the paintbrush
 var paintbrush = {
-	size: 1,
-	spread: 0,
-	lock: true,
-	paint: function(e){
-		var pos = this.getMousePos(canvas, e);
+	size: 1, // size of the brush
+	spread: 0, // random spread of the paint
+	lock: true, // idr this one
+	mouseDown: function(e){
+		if (e.button === 0) {
+			this.lock = false;
+			this.paintCell(e);
+		}
+	},
+	mouseUp: function(e){
+		if (e.button === 0) {
+			this.lock = true;
+		}
+	},
+	mouseMove: function(e){
+		if (this.lock != true) {
+			this.paintCell(e);
+		};
+	},
+	paintCell: function(e){ // Split this shit up way better, have a function that just paints one cell by coords
+		var pos = game.getMousePos(canvas, e);
 		var chunk = {x:0, y:0};
 		var cell = {x:0, y:0};
 
-		chunk.x = Math.floor(pos.x/(game.chunkSize * game.zoom) + camera.offsetX);
-		chunk.y = Math.floor(pos.y/(game.chunkSize * game.zoom) + camera.offsetY);
+		chunk.x = Math.floor(
+			(pos.x - camera.offsetX)/(game.chunkSize * game.zoom)
+		);
+		chunk.y = Math.floor(
+			(pos.y - camera.offsetY)/(game.chunkSize * game.zoom)
+		);
 
-		cell.x = Math.floor(pos.x%(game.chunkSize * game.zoom));
-		cell.y = Math.floor(pos.y%(game.chunkSize * game.zoom));
+		cell.x = Math.floor(
+			((pos.x - camera.offsetX)%(game.chunkSize * game.zoom)) / game.zoom
+		);
+		cell.y = Math.floor(
+			((pos.y - camera.offsetY)%(game.chunkSize * game.zoom)) / game.zoom
+		);
 
-		console.log("Chunk x:"+chunk.x+" y:"+chunk.y);
-		console.log("Cell  x:"+cell.x+" y:"+cell.y);
+		// if the cell coords are below zero
+		if (cell.y < 0) {cell.y = game.chunkSize + cell.y};
+		if (cell.x < 0) {cell.x = game.chunkSize + cell.x};
 
-		for (var i = 0; i < chunks.length; i++) {
-			if (chunks[i].x == chunk.x && chunks.y == chunk.y) {
-				chunks[i].cells[cell.y][cell.x].k = 1;
+		//console.log("Chunk x:"+chunk.x+" y:"+chunk.y);
+		//console.log("Cell  x:"+cell.x+" y:"+cell.y);
+
+		this.newCell(chunk, cell);	
+	},
+	newCell: function(chunk, cell){
+		var chunkFound = false;
+
+		for (var z = 0; z < chunks.length; z++) {
+			if (chunks[z].x == chunk.x && chunks[z].y == chunk.y) {
+				chunkFound = true;
+
+				chunks[z].cells[cell.y][cell.x].a = 1;
+				chunks[z].cells[cell.y][cell.x].k = 0;
 			};
 		};
-	},
-	getMousePos: function(canvas, evt) {
-	    var rect = canvas.getBoundingClientRect();
-	    return {
-	    	x: Math.round(evt.clientX - rect.left),
-	    	y: Math.round(evt.clientY - rect.top)
-	    };
+
+		if (chunkFound != true) {
+			var tempChunk = new newChunk(chunk.x, chunk.y, 1, 0);
+			chunks.push(tempChunk);
+			this.newCell(chunk, cell);
+		};
 	}
 }
 
 // Mouse event listeners for paintbrush
-canvas.addEventListener("mousedown", paintbrush.paint.bind(paintbrush), false);
+canvas.addEventListener("mousedown", paintbrush.mouseDown.bind(paintbrush), false);
+canvas.addEventListener("mouseup", paintbrush.mouseUp.bind(paintbrush), false);
+canvas.addEventListener("mousemove", paintbrush.mouseMove.bind(paintbrush), false);
 
 // Main interval function
 setInterval(function(){game.tick();},game.speed);
 
+function findChunk(chunksArr, coords){
+	for (var i = chunks.length - 1; i >= 0; i--) {
+		if(
+			chunks[i].x == coords.x &&
+			chunks[i].y == coords.y		
+		){
+			return chunks[i];
+		}
+	};
+}
+
 // Chunk constructor
 function newChunk(x, y, active, suspended){
+	var tempChunk = [];
+	var emptyCell = {a: 0, k: 0};
+
+	for (var i = 0; i < game.chunkSize.length; i++) {
+		//game.chunkSize[i]
+		var tempRow = [];
+
+		for (var z = 0; z < game.chunkSize.length; z++) {
+			tempRow.push(emptyCell);
+		};
+
+		tempChunk.push(tempRow);
+	};
+
+	tempChunk = [
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
+		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}]
+	];
+
 	this.active = active;
 	this.suspended = suspended;
 	this.x = x;
 	this.y = y;
-	this.cells = [
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}],
-		[{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0},{a: 0, k: 0}]
-	]
+	this.cells = tempChunk;
 }
 
 // Calculator for the chunks and cells
@@ -268,6 +263,13 @@ function nextGeneration(){
 
 			var chunk = chunks[i];
 			var cells = chunks[i].cells;
+
+			/*
+			* Maybe change this so that we look on the edges first and then inside the chunk
+			* 
+			*
+			*
+			*/
 
 			// for all the cells in the chunk
 			for (var y = cells.length - 1; y >= 0; y--) {
@@ -291,7 +293,7 @@ function nextGeneration(){
 							};
 						}
 						else if(x == bounds) {	
-							var rightChunk = _.findWhere(chunks, {x: chunk.x+1, y: chunk.y});
+							var rightChunk = findChunk(chunks, {x: chunk.x+1, y: chunk.y});
 
 							if (rightChunk != undefined && rightChunk.cells[y-1][0].a == 1) {
 								neighbors++;
@@ -299,7 +301,7 @@ function nextGeneration(){
 						};
 					}
 					else if (y == 0) {
-						var topChunk = _.findWhere(chunks, {x: chunk.x, y: chunk.y-1});
+						var topChunk = findChunk(chunks, {x: chunk.x, y: chunk.y-1});
 
 						//top block
 						if (topChunk != undefined && topChunk.cells[bounds][x].a == 1) {
@@ -313,7 +315,7 @@ function nextGeneration(){
 							};
 						}
 						else if(topChunk != undefined && x == bounds) {	
-							var topRightChunk = _.findWhere(chunks, {x: topChunk.x+1, y: topChunk.y});
+							var topRightChunk = findChunk(chunks, {x: topChunk.x+1, y: topChunk.y});
 
 							if (topRightChunk != undefined && topRightChunk.cells[bounds][0].a == 1) {
 								neighbors++;
@@ -335,7 +337,7 @@ function nextGeneration(){
 							};
 						}
 						else if(x == 0 && neighbors <4) {	
-							var leftChunk = _.findWhere(chunks, {x: chunk.x-1, y: chunk.y});
+							var leftChunk = findChunk(chunks, {x: chunk.x-1, y: chunk.y});
 							
 							if (leftChunk != undefined && leftChunk.cells[y+1][bounds].a == 1) {
 								neighbors++;
@@ -343,7 +345,7 @@ function nextGeneration(){
 						};
 					}
 					else if (y == bounds) {
-						var bottomChunk = _.findWhere(chunks, {x: chunk.x, y: chunk.y+1});
+						var bottomChunk = findChunk(chunks, {x: chunk.x, y: chunk.y+1});
 
 						//bottom block
 						if (bottomChunk != undefined && bottomChunk.cells[0][x].a == 1) {
@@ -357,7 +359,7 @@ function nextGeneration(){
 							};
 						}
 						else if(bottomChunk != undefined && x == 0 && neighbors <4) {	
-							var bottomLeftChunk = _.findWhere(chunks, {x: bottomChunk.x-1, y: bottomChunk.y});
+							var bottomLeftChunk = findChunk(chunks, {x: bottomChunk.x-1, y: bottomChunk.y});
 
 							if (bottomLeftChunk != undefined && bottomLeftChunk.cells[0][bounds].a == 1) {
 								neighbors++;
@@ -379,7 +381,7 @@ function nextGeneration(){
 							};
 						}
 						else if(y == 0 && neighbors <4) {	
-							var leftTopChunk = _.findWhere(chunks, {x: chunk.x, y: chunk.y-1});
+							var leftTopChunk = findChunk(chunks, {x: chunk.x, y: chunk.y-1});
 							
 							if (leftTopChunk != undefined && leftTopChunk.cells[bounds][x-1].a == 1) {
 								neighbors++;
@@ -387,7 +389,7 @@ function nextGeneration(){
 						};
 					}
 					else if (x == 0 && neighbors <4) {
-						var leftChunk = _.findWhere(chunks, {x: chunk.x-1, y: chunk.y});
+						var leftChunk = findChunk(chunks, {x: chunk.x-1, y: chunk.y});
 
 						//left block
 						if (leftChunk != undefined && leftChunk.cells[y][bounds].a == 1) {
@@ -401,7 +403,7 @@ function nextGeneration(){
 							};
 						}
 						else if(y == 0 && neighbors <4) {	
-							var leftTopChunk = _.findWhere(chunks, {x: chunk.x-1, y: chunk.y-1});
+							var leftTopChunk = findChunk(chunks, {x: chunk.x-1, y: chunk.y-1});
 
 							if (leftTopChunk != undefined && leftTopChunk.cells[bounds][bounds].a == 1) {
 								neighbors++;
@@ -423,7 +425,7 @@ function nextGeneration(){
 							};
 						}
 						else if(y == bounds && neighbors <4) {	
-							var rightBottomChunk = _.findWhere(chunks, {x: chunk.x, y: chunk.y+1});
+							var rightBottomChunk = findChunk(chunks, {x: chunk.x, y: chunk.y+1});
 							
 							if (rightBottomChunk != undefined && rightBottomChunk.cells[0][x+1].a == 1) {
 								neighbors++;
@@ -431,7 +433,7 @@ function nextGeneration(){
 						};
 					}
 					else if (x == bounds && neighbors <4) {
-						var rightChunk = _.findWhere(chunks, {x: chunk.x+1, y: chunk.y});
+						var rightChunk = findChunk(chunks, {x: chunk.x+1, y: chunk.y});
 
 						//right block
 						if (rightChunk != undefined && rightChunk.cells[y][0].a == 1) {
@@ -445,7 +447,7 @@ function nextGeneration(){
 							};
 						}
 						else if(y == bounds && neighbors <4) {	
-							var rightBottomChunk = _.findWhere(chunks, {x: chunk.x+1, y: chunk.y+1});
+							var rightBottomChunk = findChunk(chunks, {x: chunk.x+1, y: chunk.y+1});
 
 							if (rightBottomChunk != undefined && rightBottomChunk.cells[0][0].a == 1) {
 								neighbors++;
@@ -470,10 +472,9 @@ function nextGeneration(){
 
 	// Kill all cells that didnt qualify
 	kill();
-
 }
 
-// Generate the chunks that cells are about to enter into
+// Generate the chunks that cells are about to enter into - OPTIMIZED!
 function generateNewChunks(){
 	for (var i = chunks.length - 1; i >= 0; i--) {
 		var chunk = chunks[i];
@@ -589,7 +590,7 @@ function killReset(){
 }
 
 // Pretty gfx
-function drawChunks(){
+function draw(){
 	clearCanvas();
 
 	ctx.fillStyle = '#B6E2E7';
@@ -598,6 +599,14 @@ function drawChunks(){
 	for (var i = chunks.length - 1; i >= 0; i--) {
 		drawChunk(chunks[i]);
 	};
+
+	var sum = game.currentFPS.reduce(function(a, b) { return a + b });
+	var avg = sum / game.currentFPS.length;
+
+	ctx.fillStyle = '#000';
+	ctx.fillText('FPS:'+avg,10,10);
+
+	document.getElementById("title").innerHTML = "Conway, fps:"+avg;
 }
 
 // Draw a specific chunks
